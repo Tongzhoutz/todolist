@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "git-cz": "^4.9.0",
     "moment": "^2.29.4",
     "sass": "^1.57.1"
   }

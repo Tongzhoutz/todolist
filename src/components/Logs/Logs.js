@@ -2,43 +2,22 @@ import classes from './Logs.module.scss';
 import LogItem from './LogItem/LogItem';
 import Card from '../UI/Card/Card';
 
-const Logs = () => {
-  const logData = [
-    {
-      id: '001',
-      curDate: new Date(2023, 1, 9), 
-      description: 'Learn React', 
-      timeSpent: 40,
-    },
-    {
-      id: '002',
-      curDate: new Date(2022, 12, 17), 
-      description: 'Buy Bacon', 
-      timeSpent: 20,
-    },
-    {
-      id: '003',
-      curDate: new Date(2022, 10, 21), 
-      description: 'Teach Econometrics', 
-      timeSpent: 20,
-    },
-    {
-      id: '004',
-      curDate: new Date(2022, 8, 8), 
-      description: 'Learn Leetcode', 
-      timeSpent: 50,
-    }
-  ];
-  const LogDataIter = logData.map(item => 
+const Logs = ({logData, onDeleteLog}) => {
+
+  const LogDataIter = logData.map( (item, index) => 
     <LogItem key={item.id} 
+             onDeleteLog={()=>onDeleteLog(index)}
              curDate={item.curDate} 
              description={item.description} 
              timeSpent={item.timeSpent}/>
   );
 
+  const LogDataLen = LogDataIter.length;
   return (
     <Card className={classes.logs}>
-      {LogDataIter}
+      {
+        LogDataLen === 0 ?  <h2 className={classes.nofoundwarning}>No Logs Found!</h2> : LogDataIter
+      }
     </Card>
   )};
 export default Logs;

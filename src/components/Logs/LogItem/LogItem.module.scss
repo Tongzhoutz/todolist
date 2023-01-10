@@ -17,5 +17,13 @@
     .time{
         color: $tTimeColor
     }
-    
+}
+
+.delete {
+    margin: 10px 10px;
+    transition: .5s;
+    :hover {
+        cursor: pointer;
+        transform: rotate(1turn);
+    }
 }

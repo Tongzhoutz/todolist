@@ -2,9 +2,28 @@ import classes from './LogItem.module.scss';
 import MyDate from './MyDate/MyDate';
 import PropTypes from 'prop-types';
 import Card from '../../UI/Card/Card';
-const LogItem = ({curDate, description, timeSpent}) => {
+import { useState } from 'react';
+import ConfirmModal from '../../UI/ConfirmModal/ConfirmModal';
+
+const LogItem = ({curDate, description, timeSpent, onDeleteLog}) => {
+
+  const [showConfirm, setShowConfirm] = useState(false);
+  const deleteHandler = () => {
+    setShowConfirm(true);
+  }
+  const cancelHandler = () => {
+    setShowConfirm(false);
+  }
+
+  const confirmHandler = () => {
+    onDeleteLog();
+    setShowConfirm(false);
+  }
   return (
     <Card className={classes.item}>
+        {showConfirm && <ConfirmModal confirmText="Are you sure you want to delete the item?" 
+                                      onCancel={cancelHandler}
+                                      onConfirm={confirmHandler} />}
         <MyDate curDate = {curDate} />
 
         <div className={classes.content}>
@@ -14,8 +33,11 @@ const LogItem = ({curDate, description, timeSpent}) => {
             <p className={classes.time}>
                 {timeSpent} min
             </p>
-
         </div>
+        <div className={classes.delete}>
+          <div onClick={deleteHandler}>❌</div>
+        </div>
+
     </Card>
   )};
 LogItem.propTypes = {

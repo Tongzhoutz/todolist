@@ -1,0 +1,50 @@
+@import '/src/common.module.scss';
+
+.confirm {
+  display: flex;
+  flex-flow: column;
+  width: 450px;
+  height: 200px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  
+  
+  .text {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 22px;
+    color: $tTimeColor;
+    font-weight: 500;
+  }
+
+  .btns {
+    flex: auto;
+    display: flex;
+    justify-content: flow-end;
+    height: 40px;
+    margin: 0 auto;
+
+    button {
+      width: 80px;
+      background-color: $tBackground;
+      border: none;
+      margin: 0 20px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .OKbtn {
+      background-color: $tTimeColor;
+      color: #fff;
+    }
+  }
+}
