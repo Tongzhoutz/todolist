@@ -1,13 +1,14 @@
 import classes from './MyDate.module.scss';
-
-const MyDate = () => {
+const MyDate = ({curDate}) => {
+  const month = curDate.toLocaleString('default', {month: 'short'});
+  const date = curDate.getDate();
   return (
     <div className={classes.date}>
         <div className={classes.month}>
-            April
+            {month}
         </div>
         <div className={classes.day}>
-            19
+            {date}
         </div>
     </div>
 )}

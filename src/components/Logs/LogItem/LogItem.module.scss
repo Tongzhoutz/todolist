@@ -1,11 +1,8 @@
-
-
+@import '/src/common.module.scss';
 .item {
     display: flex;
     margin: 16px 0;
     background-color: #FCBF49;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     padding: 6px;
 }
 
@@ -15,10 +12,10 @@
     font-weight: 700;
     .desc{
         font-size: 16px;
-        color: #194B49;
+        color: $tDescColor;
     }
     .time{
-        color: #D62828;
+        color: $tTimeColor
     }
     
 }

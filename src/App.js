@@ -1,8 +1,13 @@
-import styles from './App.module.scss';
 import Logs from './components/Logs/Logs';
+import LogsForm from './components/LogsForm/LogsForm';
+import styles from './App.module.scss';
+
 const App  = () =>{
   return (
-    <Logs />
+    <div className={styles.app}>
+     <LogsForm />
+     <Logs />
+    </div>
   )
 }
 

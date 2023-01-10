@@ -1,21 +1,27 @@
 import classes from './LogItem.module.scss';
 import MyDate from './MyDate/MyDate';
-
-const LogItem = () => {
+import PropTypes from 'prop-types';
+import Card from '../../UI/Card/Card';
+const LogItem = ({curDate, description, timeSpent}) => {
   return (
-    <div className={classes.item}>
-        <MyDate />
+    <Card className={classes.item}>
+        <MyDate curDate = {curDate} />
 
         <div className={classes.content}>
             <h3 className={classes.desc}>
-                Learn React
+                {description} 
             </h3>
             <p className={classes.time}>
-                40 min
+                {timeSpent} min
             </p>
 
         </div>
-    </div>
-  )}
+    </Card>
+  )};
+LogItem.propTypes = {
+  curDate: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  timeSpent: PropTypes.number.isRequired,
+}
 
 export default LogItem;
