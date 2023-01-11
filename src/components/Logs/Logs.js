@@ -14,9 +14,9 @@ const Logs = ({logData, onDeleteLog}) => {
     setYear(year);
   }
   
-  const LogDataIter = filteredLogData.map( (item, index) => 
+  const LogDataIter = filteredLogData.map( item => 
     <LogItem key={item.id} 
-             onDeleteLog={()=>onDeleteLog(index)}
+             onDeleteLog={()=>onDeleteLog(item.id)}
              curDate={item.curDate} 
              description={item.description} 
              timeSpent={item.timeSpent}/>

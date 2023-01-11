@@ -38,11 +38,9 @@ const App  = () =>{
     setLogData([...logDataState, newLog]);
   }
 
-  const deleteHandler = (index) => {
+  const deleteHandler = (id) => {
     setLogData(prevLogData => {
-      const newLogData = [...prevLogData];
-      newLogData.splice(index,1);
-      return newLogData;
+      return prevLogData.filter(item => item.id !== id);
     });
   }
   
