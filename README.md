@@ -15,6 +15,7 @@ users can filter logs by year
 - I use <strong>CSS Modules</strong> and <strong>Sass</strong> to enhance development efficiency.
 - I use over 10 components to do this project for future maintenance, scaling and improving. Its structure is below:
 <img src='public/info_flow.png'/>
+
 ### Next step
 - Integrate with MongoDB to test the back-end.
 - Use UI framework/libraries (such at ant design) to make forms/buttons/etc. more beautiful.
